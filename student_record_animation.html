@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Record - Result Publishing</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to right, #1e3c72, #2a5298);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        h1 {
+            text-align: center;
+            color: white;
+            margin-bottom: 20px;
+            animation: glowText 2s infinite alternate;
+        }
+
+        .card {
+            background: white;
+            width: 500px;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+            animation: slideIn 2s ease;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        table, th, td {
+            border: 1px solid #ccc;
+        }
+
+        th {
+            background-color: #1e3c72;
+            color: white;
+        }
+
+        th, td {
+            padding: 10px;
+            text-align: center;
+        }
+
+        /* Slide In Animation */
+        @keyframes slideIn {
+            0% {
+                transform: translateY(-100px);
+                opacity: 0;
+            }
+            100% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        /* Glow Text Animation */
+        @keyframes glowText {
+            0% {
+                text-shadow: 0 0 5px #ffffff;
+            }
+            100% {
+                text-shadow: 0 0 20px #00ffff, 0 0 30px #00ffff;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div>
+        <h1>Student Record</h1>
+
+        <div class="card">
+            <table>
+                <tr>
+                    <th>Field</th>
+                    <th>Details</th>
+                </tr>
+                <tr>
+                    <td>Name</td>
+                    <td>Laksha Siva</td>
+                </tr>
+                <tr>
+                    <td>Register Number</td>
+                    <td>2026CS101</td>
+                </tr>
+                <tr>
+                    <td>Branch</td>
+                    <td>CSE</td>
+                </tr>
+                <tr>
+                    <td>Semester</td>
+                    <td>3</td>
+                </tr>
+                <tr>
+                    <td>CGPA</td>
+                    <td>8.5</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+</body>
+</html>
