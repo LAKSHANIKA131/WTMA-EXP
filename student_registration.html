@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Information Form - Online Result Publishing</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f6fc;
+            margin: 0;
+            padding: 40px;
+        }
+
+        h2 {
+            text-align: center;
+            color: #1e3c72;
+        }
+
+        .form-container {
+            width: 500px;
+            margin: auto;
+            background-color: #ffffff;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        label {
+            font-weight: bold;
+        }
+
+        input, select, textarea {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            margin-bottom: 15px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        input[type="radio"] {
+            width: auto;
+        }
+
+        .gender-group {
+            margin-bottom: 15px;
+        }
+
+        .buttons {
+            text-align: center;
+        }
+
+        input[type="submit"],
+        input[type="reset"] {
+            width: 120px;
+            background-color: #1e3c72;
+            color: white;
+            border: none;
+            padding: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 5px;
+        }
+
+        input[type="submit"]:hover,
+        input[type="reset"]:hover {
+            background-color: #16305f;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h2>Online Result Publishing Portal<br>Student Information Form</h2>
+
+    <div class="form-container">
+
+        <!-- Step 3: Form Configuration -->
+        <form action="submit.html" method="POST" name="studentForm" id="studentForm">
+
+            <!-- Step 4: Name -->
+            <label for="name">Name:</label>
+            <input type="text"
+                   id="name"
+                   name="student_name"
+                   placeholder="Enter your name"
+                   required>
+
+            <!-- Step 5: Email -->
+            <label for="email">Email:</label>
+            <input type="email"
+                   id="email"
+                   name="email"
+                   placeholder="Enter your email"
+                   required>
+
+            <!-- Step 6: Branch -->
+            <label for="branch">Branch:</label>
+            <select id="branch" name="branch" required>
+                <option value="">-- Select Branch --</option>
+                <option value="CSE">CSE</option>
+                <option value="ECE">ECE</option>
+                <option value="EEE">EEE</option>
+                <option value="MECH">MECH</option>
+            </select>
+
+            <!-- Step 7: Gender -->
+            <label>Gender:</label>
+            <div class="gender-group">
+                <input type="radio" name="gender" value="Male" required> Male
+                <input type="radio" name="gender" value="Female" required> Female
+                <input type="radio" name="gender" value="Other" required> Other
+            </div>
+
+            <!-- Step 8: Address -->
+            <label for="address">Address:</label>
+            <textarea id="address"
+                      name="address"
+                      rows="4"
+                      cols="40"
+                      placeholder="Enter your address"
+                      required></textarea>
+
+            <!-- Step 9: Buttons -->
+            <div class="buttons">
+                <input type="submit" value="Submit">
+                <input type="reset" value="Reset">
+            </div>
+
+        </form>
+
+    </div>
+
+</body>
+</html>

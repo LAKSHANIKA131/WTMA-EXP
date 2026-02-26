@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+    body {
+        font-family: Arial;
+        background-color: #f4f6fc;
+        padding: 20px;
+    }
+
+    h3 {
+        color: #1e3c72;
+    }
+
+    iframe {
+        width: 100%;
+        height: 350px;
+        border-radius: 8px;
+        border: 2px solid #1e3c72;
+    }
+
+    .links a {
+        display: inline-block;
+        margin: 10px 10px 10px 0;
+        padding: 8px 15px;
+        background-color: #1e3c72;
+        color: white;
+        text-decoration: none;
+        border-radius: 5px;
+    }
+
+    .links a:hover {
+        background-color: #16305f;
+    }
+</style>
+</head>
+
+<body>
+
+    <h3>University Location Map</h3>
+
+    <!-- Embedded Google Map -->
+    <iframe 
+        src="https://www.google.com/maps?q=Chennai&output=embed">
+    </iframe>
+
+    <h3>Campus Navigation (Hotspots)</h3>
+
+    <!-- Image with Hotspots -->
+    <img src="https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc"
+         width="600"
+         usemap="#campusmap">
+
+    <map name="campusmap">
+        <area shape="rect" coords="50,50,200,200"
+              href="https://www.google.com"
+              alt="Examination Cell"
+              target="_blank">
+
+        <area shape="circle" coords="400,150,60"
+              href="https://www.wikipedia.org"
+              alt="Administration Block"
+              target="_blank">
+    </map>
+
+</body>
+</html>
