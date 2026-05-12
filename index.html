@@ -1,0 +1,306 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Result Portal - Role Login</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <a class="brand" href="#home" aria-label="Result portal home">
+        <span class="brand-mark">RP</span>
+        <span>
+          <strong>Result Portal</strong>
+          <small>Role based academic result system</small>
+        </span>
+      </a>
+
+      <nav class="nav-links" aria-label="Role navigation">
+        <a href="#student">Student</a>
+        <a href="#teacher">Teacher</a>
+        <a href="#admin">Admin</a>
+      </nav>
+
+      <button id="themeToggle" class="icon-button" type="button" aria-label="Toggle theme">
+        <span aria-hidden="true">T</span>
+      </button>
+    </header>
+
+    <main>
+      <section class="hero" id="home">
+        <div class="hero-copy">
+          <p class="eyebrow">Online Result Publishing Website</p>
+          <h1>Start with your role, then manage the right result workflow.</h1>
+          <p>
+            Students can view and download reports, teachers can search class
+            performance and edit grades, and administrators can manage results,
+            revaluation requests, and analysis dashboards.
+          </p>
+        </div>
+
+        <div class="role-grid" aria-label="Choose login role">
+          <article class="role-card">
+            <span class="role-icon">S</span>
+            <h2>Student Login</h2>
+            <p>View report, install result report, revaluation form, registration form.</p>
+            <a class="button primary" href="#student">Open Student</a>
+          </article>
+          <article class="role-card">
+            <span class="role-icon">T</span>
+            <h2>Teacher Login</h2>
+            <p>Search and view class result, then edit grades for selected subjects.</p>
+            <a class="button primary" href="#teacher">Open Teacher</a>
+          </article>
+          <article class="role-card">
+            <span class="role-icon">A</span>
+            <h2>Admin Login</h2>
+            <p>Enter and edit results, view revaluation requests, and analyze outcomes.</p>
+            <a class="button primary" href="#admin">Open Admin</a>
+          </article>
+        </div>
+      </section>
+
+      <section class="workspace" id="student">
+        <div class="section-heading">
+          <p class="eyebrow">Student Portal</p>
+          <h2>Login to access student services</h2>
+        </div>
+
+        <div class="portal-grid">
+          <form id="studentLoginForm" class="panel stacked-form">
+            <label>
+              Roll Number
+              <input name="rollNumber" type="text" value="2021CS001" required />
+            </label>
+            <label>
+              Date of Birth / Password
+              <input name="password" type="password" value="student123" required />
+            </label>
+            <button class="button primary full" type="submit">Student Login</button>
+            <p class="form-note">Demo: 2021CS001 / student123</p>
+          </form>
+
+          <div id="studentDashboard" class="panel dashboard hidden">
+            <div class="module-tabs" role="tablist" aria-label="Student features">
+              <button class="tab-btn active" data-panel="studentReport" type="button">View Report</button>
+              <button class="tab-btn" data-panel="studentDownload" type="button">Install Result Report</button>
+              <button class="tab-btn" data-panel="studentReeval" type="button">Reeval Form</button>
+              <button class="tab-btn" data-panel="studentRegister" type="button">Registration Form</button>
+            </div>
+
+            <div id="studentReport" class="module-panel active">
+              <form id="studentResultForm" class="inline-form">
+                <input id="studentRollNumber" type="text" value="2021CS001" aria-label="Roll number" required />
+                <select id="studentSemester" aria-label="Semester">
+                  <option value="Semester 3">Semester 3</option>
+                  <option value="Semester 2">Semester 2</option>
+                  <option value="Semester 1">Semester 1</option>
+                </select>
+                <button class="button primary" type="submit">View Report</button>
+              </form>
+              <article id="resultCard" class="result-card" aria-live="polite"></article>
+            </div>
+
+            <div id="studentDownload" class="module-panel">
+              <div class="action-strip">
+                <div>
+                  <h3>Result Report</h3>
+                  <p>Generate a printable result report from the latest viewed mark sheet.</p>
+                </div>
+                <button id="printMarksheet" class="button primary" type="button">Install / Print Report</button>
+              </div>
+            </div>
+
+            <div id="studentReeval" class="module-panel">
+              <form id="reevalForm" class="wide-form">
+                <label>
+                  Roll Number
+                  <input name="rollNumber" type="text" value="2021CS001" required />
+                </label>
+                <label>
+                  Subject
+                  <input name="subjectName" type="text" placeholder="Database Management" required />
+                </label>
+                <label>
+                  Reason
+                  <textarea name="reason" rows="4" placeholder="Explain the revaluation request" required></textarea>
+                </label>
+                <button class="button primary" type="submit">Submit Reevaluation Request</button>
+              </form>
+            </div>
+
+            <div id="studentRegister" class="module-panel">
+              <form id="registrationForm" class="wide-form">
+                <label>
+                  Student Name
+                  <input name="name" type="text" placeholder="Full name" required />
+                </label>
+                <label>
+                  Roll Number
+                  <input name="rollNumber" type="text" placeholder="2021CS003" required />
+                </label>
+                <label>
+                  Email
+                  <input name="email" type="email" placeholder="student@example.com" required />
+                </label>
+                <label>
+                  Class
+                  <input name="class" type="text" placeholder="B.Tech CSE" required />
+                </label>
+                <label>
+                  Section
+                  <select name="section" required>
+                    <option value="">Select section</option>
+                    <option value="A">Section A</option>
+                    <option value="B">Section B</option>
+                    <option value="C">Section C</option>
+                  </select>
+                </label>
+                <label>
+                  Address
+                  <textarea name="address" rows="3" placeholder="Student address" required></textarea>
+                </label>
+                <button class="button primary" type="submit">Register Student</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="workspace" id="teacher">
+        <div class="section-heading">
+          <p class="eyebrow">Teacher Portal</p>
+          <h2>Search class results and edit grades</h2>
+        </div>
+
+        <div class="portal-grid">
+          <form id="teacherLoginForm" class="panel stacked-form">
+            <label>
+              Teacher ID
+              <input name="username" type="text" value="teacher" required />
+            </label>
+            <label>
+              Password
+              <input name="password" type="password" value="teacher123" required />
+            </label>
+            <button class="button primary full" type="submit">Teacher Login</button>
+            <p class="form-note">Demo: teacher / teacher123</p>
+          </form>
+
+          <div id="teacherDashboard" class="panel dashboard hidden">
+            <form id="classSearchForm" class="inline-form">
+              <input id="classQuery" type="text" value="B.Tech CSE" aria-label="Class name" required />
+              <select id="classSemester" aria-label="Semester">
+                <option value="Semester 3">Semester 3</option>
+                <option value="Semester 2">Semester 2</option>
+                <option value="Semester 1">Semester 1</option>
+              </select>
+              <button class="button primary" type="submit">Search Class Result</button>
+            </form>
+            <div id="classResultView" class="table-wrap"></div>
+
+            <form id="teacherEditGradeForm" class="wide-form compact-form">
+              <label>
+                Roll Number
+                <input name="rollNumber" type="text" placeholder="2021CS001" required />
+              </label>
+              <label>
+                Subject
+                <input name="subjectName" type="text" placeholder="Data Structures" required />
+              </label>
+              <label>
+                New Marks
+                <input name="newMarks" type="number" min="0" max="100" placeholder="90" required />
+              </label>
+              <button class="button primary" type="submit">Edit Grade</button>
+            </form>
+          </div>
+        </div>
+      </section>
+
+      <section class="workspace" id="admin">
+        <div class="section-heading">
+          <p class="eyebrow">Admin Portal</p>
+          <h2>Manage results, requests, and analysis</h2>
+        </div>
+
+        <div class="portal-grid">
+          <form id="adminLoginForm" class="panel stacked-form">
+            <label>
+              Username
+              <input name="username" type="text" value="admin" required />
+            </label>
+            <label>
+              Password
+              <input name="password" type="password" value="admin123" required />
+            </label>
+            <button class="button primary full" type="submit">Admin Login</button>
+            <p class="form-note">Demo: admin / admin123</p>
+          </form>
+
+          <div id="adminDashboard" class="panel dashboard hidden">
+            <div class="module-tabs" role="tablist" aria-label="Admin features">
+              <button class="tab-btn active" data-panel="adminEnter" type="button">Enter Results</button>
+              <button class="tab-btn" data-panel="adminEdit" type="button">Edit Results</button>
+              <button class="tab-btn" data-panel="adminReeval" type="button">Reevaluation Requests</button>
+              <button class="tab-btn" data-panel="adminAnalysis" type="button">Dashboard Analysis</button>
+            </div>
+
+            <div id="adminEnter" class="module-panel active">
+              <form id="addResultForm" class="wide-form">
+                <label><span>Roll Number</span><input name="rollNumber" type="text" placeholder="2021CS001" required /></label>
+                <label><span>Student Name</span><input name="studentName" type="text" placeholder="Student name" required /></label>
+                <label><span>Class</span><input name="class" type="text" placeholder="B.Tech CSE" required /></label>
+                <label><span>Subject</span><input name="subjectName" type="text" placeholder="Subject name" required /></label>
+                <label><span>Marks Obtained</span><input name="marksObtained" type="number" min="0" max="100" required /></label>
+                <label><span>Max Marks</span><input name="maxMarks" type="number" value="100" required /></label>
+                <label>
+                  <span>Semester</span>
+                  <select name="semester" required>
+                    <option value="Semester 3">Semester 3</option>
+                    <option value="Semester 2">Semester 2</option>
+                    <option value="Semester 1">Semester 1</option>
+                  </select>
+                </label>
+                <label>
+                  <span>Exam Type</span>
+                  <select name="examType">
+                    <option value="Final">Final</option>
+                    <option value="Mid">Mid</option>
+                  </select>
+                </label>
+                <button class="button primary" type="submit">Enter Result</button>
+              </form>
+            </div>
+
+            <div id="adminEdit" class="module-panel">
+              <form id="updateResultForm" class="wide-form compact-form">
+                <label><span>Roll Number</span><input name="rollNumber" type="text" placeholder="2021CS001" required /></label>
+                <label><span>Subject</span><input name="subjectName" type="text" placeholder="Subject to update" required /></label>
+                <label><span>New Marks</span><input name="newMarks" type="number" min="0" max="100" required /></label>
+                <button class="button primary" type="submit">Edit Result</button>
+              </form>
+            </div>
+
+            <div id="adminReeval" class="module-panel">
+              <div id="reevalRequests" class="request-list"></div>
+            </div>
+
+            <div id="adminAnalysis" class="module-panel">
+              <div id="analysisCards" class="analysis-grid"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+    <footer>
+      <p>&copy; 2026 Result Portal. Results are provisional until verified by the examination cell.</p>
+    </footer>
+
+    <script src="index.js" defer></script>
+  </body>
+</html>

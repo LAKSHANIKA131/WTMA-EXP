@@ -1,0 +1,17 @@
+{
+  "name": "online-result-publishing-website",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Online Result Publishing Website — WTMA Mini-Project by V S Lakshanika (241801131), Rajalakshmi Engineering College, Dept. of AI & Data Science.",
+  "scripts": {
+    "dev": "node server.js",
+    "start": "node server.js",
+    "format": "prettier --write \"*.{html,css,js,json,md}\""
+  },
+  "dependencies": {
+    "pg": "^8.13.1"
+  },
+  "devDependencies": {
+    "prettier": "^3.8.3"
+  }
+}
